@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Docker Flask App</title>
+    <meta name="viewport"
+    content="widht=device-widht",user-scalable-no, initional.scale-1.0, maximum-scale-1.0 >
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Cars system</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-</body>
+  <h1 style="text-align:center;">SYstem cars</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <table class="table">
+          <thead>
+            <tr>              
+              <th>owner</th> 
+              <th>colors</th> 
+              <th>models</th> 
+              <th>actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for e in foxx %}
+            <tr>
+              <td>{{e.owner}}</td>
+              <td>{{e.colors}}</td>
+              <td>{{e.models}}</td>
+              <td>
+                <a href="/edit/{{e.id}}">Edit</a> |
+                <a href="/delete/{{e.id}}">DELETE</a>
+              </td> 
+            </tr>
+             {% endfor %}
+            </tbody>   
+     </body>
 </html>
